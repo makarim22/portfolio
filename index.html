@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alex Chen - Fullstack Developer & Data Enthusiast</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lora:ital@0;1&family=JetBrains+Mono:wght@400;600&display=swap');
+        
+        body {
+            font-family: 'Lora', serif;
+            background-color: #faf7f2;
+            color: #3e3e3e;
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            color: #2c1810;
+        }
+        
+        .vintage-border {
+            border: 3px solid #8b6f47;
+            background: linear-gradient(135deg, #fff8f0 0%, #faf7f2 100%);
+        }
+        
+        .blog-post {
+            border-left: 5px solid #c17856;
+            padding-left: 1.5rem;
+            background: #fffbf7;
+            transition: all 0.3s ease;
+        }
+        
+        .blog-post:hover {
+            box-shadow: 0 8px 16px rgba(139, 111, 71, 0.15);
+            transform: translateX(4px);
+        }
+        
+        .tech-tag {
+            background: #e8dcc4;
+            color: #5c4033;
+            border: 1px solid #c9b899;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+        }
+        
+        .accent-color {
+            color: #c17856;
+        }
+        
+        .stat-box {
+            background: linear-gradient(135deg, #f5e6d3 0%, #e8dcc4 100%);
+            border: 2px dashed #8b6f47;
+        }
+        
+        .divider {
+            background: repeating-linear-gradient(
+                90deg,
+                #8b6f47,
+                #8b6f47 2px,
+                transparent 2px,
+                transparent 10px
+            );
+        }
+        
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #c17856;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="bg-amber-50">
+    <!-- Header/Navigation -->
+    <header class="sticky top-0 z-50 bg-white bg-opacity-95 backdrop-blur border-b-2 border-amber-900 shadow-sm">
+        <div class="max-w-4xl mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div>
+                    <h1 class="text-3xl font-bold text-amber-900">Alex Chen</h1>
+                    <p class="text-sm italic text-amber-700">Fullstack Developer • Data Scientist • Sports Analytics Enthusiast</p>
+                </div>
+                <nav class="hidden md:flex gap-8 text-amber-900">
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#blog" class="nav-link">Blog</a>
+                    <a href="#projects" class="nav-link">Projects</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="max-w-4xl mx-auto px-6 py-12 md:py-16">
+        <div class="vintage-border p-8 md:p-12 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold mb-4">Welcome to My Corner</h2>
+            <p class="text-lg italic mb-2 text-amber-800">where data meets code</p>
+            <p class="text-amber-900 leading-relaxed mb-6">Former data scientist turned fullstack developer. I blend statistical thinking with modern web development to build intelligent applications. Between commits, you'll find me analyzing sports data and exploring machine learning applications in athletics.</p>
+            <div class="flex gap-4 justify-center flex-wrap">
+                <a href="#projects" class="vintage-border px-6 py-2 hover:bg-amber-100 transition">View Projects</a>
+                <a href="#contact" class="bg-amber-800 text-white px-6 py-2 hover:bg-amber-900 transition">Get in Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Stats -->
+    <section class="max-w-4xl mx-auto px-6 py-8">
+        <div class="grid grid-cols-3 gap-4">
+            <div class="stat-box p-4 text-center">
+                <p class="text-3xl font-bold accent-color">8+</p>
+                <p class="text-sm text-amber-900">Years in Tech</p>
+            </div>
+            <div class="stat-box p-4 text-center">
+                <p class="text-3xl font-bold accent-color">25+</p>
+                <p class="text-sm text-amber-900">Projects Completed</p>
+            </div>
+            <div class="stat-box p-4 text-center">
+                <p class="text-3xl font-bold accent-color">15+</p>
+                <p class="text-sm text-amber-900">Tech Stack Skills</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="max-w-4xl mx-auto px-6 py-4">
+        <div class="divider h-1 mb-8"></div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="max-w-4xl mx-auto px-6 py-12">
+        <h3 class="text-3xl font-bold mb-6">About Me</h3>
+        <div class="space-y-6">
+            <article class="blog-post p-6">
+                <h4 class="text-xl font-bold mb-3">The Journey from Data Science to Web Development</h4>
+                <p class="mb-4">I started my career as a data scientist, building predictive models and extracting insights from complex datasets. After five years diving deep into statistical analysis and machine learning, I realized I wanted to bring those insights to life through user interfaces and real-time applications.</p>
+                <p>The transition to fullstack development felt natural—I already understood the data layer; now I was learning to communicate it effectively to end users. This unique background allows me to build data-driven applications that are both technically sound and user-friendly.</p>
+            </article>
+
+            <article class="blog-post p-6">
+                <h4 class="text-xl font-bold mb-3">Sports Analytics: A Personal Passion</h4>
+                <p>Beyond work, I'm obsessed with sports analytics. Whether it's basketball player performance metrics, soccer expected goals (xG) models, or cricket win probability calculations, I love exploring how data reveals hidden patterns in sports. This passion often finds its way into my side projects.</p>
+            </article>
+        </div>
+    </section>
+
+    <div class="max-w-4xl mx-auto px-6 py-4">
+        <div class="divider h-1 mb-8"></div>
+    </div>
+
+    <!-- Tech Stack Section -->
+    <section class="max-w-4xl mx-auto px-6 py-12">
+        <h3 class="text-3xl font-bold mb-8">Tech Arsenal</h3>
+        
+        <div class="space-y-8">
+            <div>
+                <h4 class="text-xl font-bold mb-4 text-amber-900">Frontend</h4>
+                <div class="flex flex-wrap gap-3">
+                    <span class="tech-tag px-4 py-2 rounded">React</span>
+                    <span class="tech-tag px-4 py-2 rounded">Vue.js</span>
+                    <span class="tech-tag px-4 py-2 rounded">Next.js</span>
+                    <span class="tech-tag px-4 py-2 rounded">TypeScript</span>
+                    <span class="tech-tag px-4 py-2 rounded">Tailwind CSS</span>
+                    <span class="tech-tag px-4 py-2 rounded">D3.js</span>
+                </div>
+            </div>
+
+            <div>
+                <h4 class="text-xl font-bold mb-4 text-amber-900">Backend</h4>
+                <div class="flex flex-wrap gap-3">
+                    <span class="tech-tag px-4 py-2 rounded">Node.js</span>
+                    <span class="tech-tag px-4 py-2 rounded">Python</span>
+                    <span class="tech-tag px-4 py-2 rounded">Django</span>
+                    <span class="tech-tag px-4 py-2 rounded">FastAPI</span>
+                    <span class="tech-tag px-4 py-2 rounded">PostgreSQL</span>
+                    <span class="tech-tag px-4 py-2 rounded">MongoDB</span>
+                </div>
+            </div>
+
+            <div>
+                <h4 class="text-xl font-bold mb-4 text-amber-900">Data & ML</h4>
+                <div class="flex flex-wrap gap-3">
+                    <span class="tech-tag px-4 py-2 rounded">Pandas</span>
+                    <span class="tech-tag px-4 py-2 rounded">NumPy</span>
+                    <span class="tech-tag px-4 py-2 rounded">Scikit-learn</span>
+                    <span class="tech-tag px-4 py-2 rounded">TensorFlow</span>
+                    <span class="tech-tag px-4 py-2 rounded">Jupyter</span>
+                </div>
+            </div>
+
+            <div>
+                <h4 class="text-xl font-bold mb-4 text-amber-900">DevOps & Tools</h4>
+                <div class="flex flex-wrap gap-3">
+                    <span class="tech-tag px-4 py-2 rounded">Docker</span>
+                    <span class="tech-tag px-4 py-2 rounded">AWS</span>
+                    <span class="tech-tag px-4 py-2 rounded">Git</span>
+                    <span class="tech-tag px-4 py-2 rounded">CI/CD</span>
+                    <span class="tech-tag px-4 py-2 rounded">Linux</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="max-w-4xl mx-auto px-6 py-4">
+        <div class="divider h-1 mb-8"></div>
+    </div>
+
+    <!-- Featured Blog Posts -->
+    <section id="blog" class="max-w-4xl mx-auto px-6 py-12">
+        <h3 class="text-3xl font-bold mb-8">Latest Articles & Insights</h3>
+        <div class="space-y-6">
+            <article class="blog-post p-6">
+                <div class="flex justify-between items-start mb-3 flex-wrap">
+                    <h4 class="text-xl font-bold">Building a Sports Analytics Dashboard with React and D3</h4>
+                    <span class="text-sm text-amber-700 italic">March 2026</span>
+                </div>
+                <p class="mb-3">In this post, I explore how to combine React's component model with D3's powerful visualization capabilities to create interactive sports analytics dashboards. We'll build a live basketball player performance tracker with real-time updates.</p>
+                <div class="flex gap-2 flex-wrap">
+                    <span class="text-xs bg-amber-100 text-amber-900 px-2 py-1 rounded">React</span>
+                    <span class="text-xs bg-amber-100 text-amber-900 px-2 py-1 rounded">D3.js</span>
+                    <span class="text-xs bg-amber-100 text-amber-900 px-2 py-1 rounded">Sports Analytics</span>
+                </div>
+            </article>
+
+            <article class="blog-post p-6">
+                <div class="flex justify-between items-start mb-3 flex-wrap">
+                    <h4 class="text-xl font-bold">Transitioning from Data Science to Backend Development</h4>
+                    <span class="text-sm text-amber-700 italic">February 2026</span>
+                </div>
+                <p class="mb-3">Reflecting on my career shift from building ML models to developing production APIs. I share lessons learned, tools that transferred well, and the mindset changes required to think about performance, scalability, and user experience at scale.</p>
+                <div class="flex gap-2 flex-wrap">
+                    <span class="text-xs bg-amber-100 text-amber-900 px-2 py-1 rounded">Career</span>
+                    <span class="text-xs bg-amber-100 text-amber-900 px-2 py-1 rounded">Backend</span>
+                    <span class="text-xs bg-amber-100 text-amber-900 px-2 py-1 rounded">Learning</span>
+                </div>
+            </article>
+
+            <article class="blog-post p-6">
+                <div class="flex justify-between items-start mb-3 flex-wrap">
+                    <h4 class="text-xl font-bold">Predictive Models in Production: From Jupyter to FastAPI</h4>
+                    <span class="text-sm text-amber-700 italic">January 2026</span>
+                </div>
+                <p class="mb-3">Taking a trained machine learning model from Jupyter notebook to production isn't straightforward. This technical deep-dive covers containerization, API design, monitoring, and deployment strategies for ML services.</p>
+                <div class="flex gap-2 flex-wrap">
+                    <span class="text-xs bg-amber-100 text-amber-900 px-2 py-1 rounded">Machine Learning</span>
+                    <span class="text-xs bg-amber-100 text-amber-900 px-2 py-1 rounded">FastAPI</span>
+                    <span class="text-xs bg-amber-100 text-amber-900 px-2 py-1 rounded">DevOps</span>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <div class="max-w-4xl mx-auto px-6 py-4">
+        <div class="divider h-1 mb-8"></div>
+    </div>
+
+    <!-- Projects Section -->
+    <section id="projects" class="max-w-4xl mx-auto px-6 py-12">
+        <h3 class="text-3xl font-bold mb-8">Featured Projects</h3>
+        <div class="space-y-6">
+            <div class="vintage-border p-6 hover:shadow-lg transition">
+                <h4 class="text-xl font-bold mb-2">Soccer Analytics Platform</h4>
+                <p class="text-sm text-amber-700 italic mb-3">Full-stack application for analyzing soccer match data</p>
+                <p class="mb-4">A comprehensive platform that processes match telemetry data, calculates expected goals (xG) and passing networks, and visualizes player heatmaps. Built with React frontend and Python backend processing.</p>
+                <div class="flex gap-2 flex-wrap">
+                    <span class="text-xs bg-amber-900 text-white px-2 py-1 rounded">React</span>
+                    <span class="text-xs bg-amber-900 text-white px-2 py-1 rounded">Python</span>
+                    <span class="text-xs bg-amber-900 text-white px-2 py-1 rounded">D3.js</span>
+                    <span class="text-xs bg-amber-900 text-white px-2 py-1 rounded">PostgreSQL</span>
+                </div>
+            </div>
+
+            <div class="vintage-border p-6 hover:shadow-lg transition">
+                <h4 class="text-xl font-bold mb-2">Real-time Fantasy Basketball Optimizer</h4>
+                <p class="text-sm text-amber-700 italic mb-3">ML-powered tool for daily fantasy sports lineup optimization</p>
+                <p class="mb-4">Leverages historical player performance data and predictive models to recommend optimal daily fantasy lineups. Features real-time API integration and a Next.js dashboard with live scoring updates.</p>
+                <div class="flex gap-2 flex-wrap">
+                    <span class="text-xs bg-amber-900 text-white px-2 py-1 rounded">Next.js</span>
+                    <span class="text-xs bg-amber-900 text-white px-2 py-1 rounded">FastAPI</span>
+                    <span class="text-xs bg-amber-900 text-white px-2 py-1 rounded">Scikit-learn</span>
+                    <span class="text-xs bg-amber-900 text-white px-2 py-1 rounded">Redis</span>
+                </div>
+            </div>
+
+            <div class="vintage-border p-6 hover:shadow-lg transition">
+                <h4 class="text-xl font-bold mb-2">Data Processing Pipeline as a Service</h4>
+                <p class="text-sm text-amber-700 italic mb-3">Scalable ETL platform for sports data ingestion and transformation</p>
+                <p class="mb-4">Designed and deployed a microservices architecture that ingests data from multiple sports APIs, performs cleaning and enrichment, and serves processed datasets. Built with Docker, AWS, and orchestrated with CI/CD pipelines.</p>
+                <div class="flex gap-2 flex-wrap">
+                    <span class="text-xs bg-amber-900 text-white px-2 py-1 rounded">Docker</span>
+                    <span class="text-xs bg-amber-900 text-white px-2 py-1 rounded">AWS</span>
+                    <span class="text-xs bg-amber-900 text-white px-2 py-1 rounded">Node.js</span>
+                    <span class="text-xs bg-amber-900 text-white px-2 py-1 rounded">PostgreSQL</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="max-w-4xl mx-auto px-6 py-4">
+        <div class="divider h-1 mb-8"></div>
+    </div>
+
+    <!-- Contact Section -->
+    <section id="contact" class="max-w-4xl mx-auto px-6 py-12">
+        <h3 class="text-3xl font-bold mb-8">Let's Connect</h3>
+        <div class="vintage-border p-8">
+            <p class="mb-6 text-lg">Whether you want to discuss sports analytics, collaborate on a fullstack project, or simply chat about data and development—I'd love to hear from you.</p>
+            <div class="space-y-3">
+                <p><span class="font-bold">Email:</span> <a href="mailto:alex@example.com" class="accent-color hover:underline">alex@example.com</a></p>
+                <p><span class="font-bold">GitHub:</span> <a href="#" class="accent-color hover:underline">github.com/alexchen</a></p>
+                <p><span class="font-bold">LinkedIn:</span> <a href="#" class="accent-color hover:underline">linkedin.com/in/alexchen</a></p>
+                <p><span class="font-bold">Twitter:</span> <a href="#" class="accent-color hover:underline">@alexchen_dev</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-amber-900 text-amber-50 mt-16 py-8">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <p class="mb-2">© 2026 Alex Chen. All rights reserved.</p>
+            <p class="text-sm italic">Built with modern web technologies and a love for data.</p>
+        </div>
+    </footer>
+</body>
+</html>
