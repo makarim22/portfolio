@@ -1,0 +1,313 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Hanken+Grotesk:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Keyframe Animations ─── */
+
+/* Speed lines streaking across from left */
+@keyframes speedLine {
+  0%   { transform: translateX(-110vw) scaleX(0.2); opacity: 0; }
+  20%  { opacity: 1; }
+  80%  { opacity: 1; }
+  100% { transform: translateX(110vw) scaleX(1); opacity: 0; }
+}
+
+/* Rev counter needle sweeping */
+@keyframes revSweep {
+  0%   { transform: rotate(-90deg); }
+  60%  { transform: rotate(80deg); }
+  80%  { transform: rotate(60deg); }
+  100% { transform: rotate(70deg); }
+}
+
+/* Neon pulse glow */
+@keyframes neonPulse {
+  0%, 100% { text-shadow: 0 0 10px rgba(200, 243, 0, 0.3), 0 0 20px rgba(200, 243, 0, 0.2); }
+  50%       { text-shadow: 0 0 25px rgba(200, 243, 0, 0.8), 0 0 50px rgba(200, 243, 0, 0.5), 0 0 80px rgba(200, 243, 0, 0.3); }
+}
+
+/* Border glow pulse */
+@keyframes borderPulse {
+  0%, 100% { border-color: #444933; box-shadow: none; }
+  50%       { border-color: #c8f300; box-shadow: 0 0 12px rgba(200, 243, 0, 0.4); }
+}
+
+/* Glitch shift */
+@keyframes glitch {
+  0%   { clip-path: inset(0 0 95% 0); transform: translateX(0); }
+  5%   { clip-path: inset(30% 0 50% 0); transform: translateX(-4px); }
+  10%  { clip-path: inset(60% 0 20% 0); transform: translateX(4px); }
+  15%  { clip-path: inset(10% 0 80% 0); transform: translateX(-2px); }
+  20%  { clip-path: inset(0 0 100% 0); transform: translateX(0); }
+  100% { clip-path: inset(0 0 100% 0); transform: translateX(0); }
+}
+
+/* Slide in from left on scroll */
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-60px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* Slide in from bottom */
+@keyframes slideInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Fade in */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Ticker tape scrolling */
+@keyframes ticker {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Rev needle shake at redline */
+@keyframes redlineShake {
+  0%, 100% { transform: rotate(70deg); }
+  25%       { transform: rotate(75deg); }
+  75%       { transform: rotate(65deg); }
+}
+
+/* Checkered flag wave */
+@keyframes flagWave {
+  0%   { transform: skewX(0deg) scaleX(1); }
+  25%  { transform: skewX(-2deg) scaleX(1.02); }
+  75%  { transform: skewX(2deg) scaleX(0.98); }
+  100% { transform: skewX(0deg) scaleX(1); }
+}
+
+/* Progress bar fill (lap timer) */
+@keyframes lapFill {
+  from { width: 0%; }
+  to   { width: 100%; }
+}
+
+/* Scanline overlay */
+@keyframes scanline {
+  0%   { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
+/* Blink */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+/* ─── Base Styles ─── */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-surface text-on-surface select-none;
+    font-family: "Hanken Grotesk", sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* Hide default cursor on desktop — custom cursor replaces it */
+  @media (pointer: fine) {
+    body, a, button { cursor: none; }
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-headline-xl uppercase tracking-tighter;
+    font-family: "Anton", sans-serif;
+  }
+
+  /* Anchor offset for sticky header */
+  [id] {
+    scroll-margin-top: 80px;
+  }
+}
+
+/* ─── Components ─── */
+@layer components {
+
+  /* Glow text */
+  .text-glow {
+    animation: neonPulse 2.5s ease-in-out infinite;
+  }
+
+  /* Neo border */
+  .neo-border {
+    @apply border border-outline-variant transition-all duration-300;
+  }
+  .neo-border:hover {
+    @apply border-primary-fixed;
+    box-shadow: 0 0 16px rgba(200, 243, 0, 0.25);
+  }
+
+  /* Background noise */
+  .bg-noise {
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuBYi7EneK7uKxK0ArrmX3s-m7hZTS0nn62VOT4qyeLRb6KabVNc-MBoXr65k2hxeQ2D213MnYp9SH-HucjTgKNs7GBMoAJm-2nYn4wBE-84pmdFl71ZBPf00GlvI8B1tyLstlqqZFPAPsJbGz31aapR9q21Yd5uXTDQGbBI8ftX3wZEzTPStpSm7vuE1nasTgBT4V1lxmNO7s4HyowTCrmRCF-v0zhNkGQmiAI1bFRRjxHOm9HD70FlbHB4vNS3TxzhP_cKqy6Tpfj6);
+    opacity: 0.05;
+  }
+
+  /* Nav link */
+  .nav-link {
+    @apply text-on-surface-variant font-label-caps hover:text-primary-fixed hover:bg-surface-container-high transition-all duration-200 px-2 py-1;
+  }
+
+  /* Material icons */
+  .material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+  }
+
+  /* Speed line element */
+  .speed-line {
+    position: absolute;
+    height: 1px;
+    width: 200px;
+    background: linear-gradient(90deg, transparent, #c8f300, transparent);
+    animation: speedLine linear infinite;
+    pointer-events: none;
+  }
+
+  /* Glitch overlay pseudo-text */
+  .glitch-text {
+    position: relative;
+  }
+  .glitch-text::before,
+  .glitch-text::after {
+    content: attr(data-text);
+    position: absolute;
+    inset: 0;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    letter-spacing: inherit;
+    pointer-events: none;
+  }
+  .glitch-text::before {
+    color: #c8f300;
+    animation: glitch 4s infinite;
+    animation-delay: 0.5s;
+  }
+  .glitch-text::after {
+    color: #00f3ff;
+    animation: glitch 4s infinite;
+    animation-delay: 1s;
+  }
+
+  /* Animate in on mount classes */
+  .animate-slide-left {
+    animation: slideInLeft 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  }
+  .animate-slide-up {
+    animation: slideInUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  }
+  .animate-fade-in {
+    animation: fadeIn 1s ease both;
+  }
+
+  /* Delay utilities */
+  .delay-100 { animation-delay: 0.1s; }
+  .delay-200 { animation-delay: 0.2s; }
+  .delay-300 { animation-delay: 0.3s; }
+  .delay-400 { animation-delay: 0.4s; }
+  .delay-500 { animation-delay: 0.5s; }
+  .delay-600 { animation-delay: 0.6s; }
+  .delay-700 { animation-delay: 0.7s; }
+
+  /* Ticker tape */
+  .ticker-wrapper {
+    overflow: hidden;
+    white-space: nowrap;
+    border-top: 1px solid #444933;
+    border-bottom: 1px solid #444933;
+  }
+  .ticker-content {
+    display: inline-block;
+    animation: ticker 20s linear infinite;
+  }
+
+  /* Lap progress bar */
+  .lap-bar {
+    height: 2px;
+    background: #c8f300;
+    animation: lapFill 2s ease-out forwards;
+    box-shadow: 0 0 8px #c8f300;
+  }
+
+  /* Border pulse on hover */
+  .border-animate:hover {
+    animation: borderPulse 1.5s ease-in-out infinite;
+  }
+
+  /* Rev counter container */
+  .rev-counter {
+    position: relative;
+    width: 120px;
+    height: 120px;
+  }
+  .rev-needle {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    width: 50px;
+    height: 3px;
+    background: #c8f300;
+    transform-origin: left center;
+    box-shadow: 0 0 8px #c8f300;
+    animation: revSweep 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards,
+               redlineShake 0.15s ease-in-out 1.5s infinite;
+  }
+
+  /* Flag stripe */
+  .checkered-stripe {
+    background-image: repeating-conic-gradient(#1e201b 0% 25%, #12140f 0% 50%);
+    background-size: 20px 20px;
+    animation: flagWave 3s ease-in-out infinite;
+  }
+
+  /* CTA button hover effect */
+  .btn-race {
+    position: relative;
+    overflow: hidden;
+  }
+  .btn-race::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+    transition: left 0.4s ease;
+  }
+  .btn-race:hover::after {
+    left: 100%;
+  }
+
+  /* Scanline effect */
+  .scanlines::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      to bottom,
+      transparent,
+      transparent 2px,
+      rgba(0,0,0,0.08) 2px,
+      rgba(0,0,0,0.08) 4px
+    );
+    pointer-events: none;
+    z-index: 5;
+  }
+
+  /* Blinking indicator light */
+  .indicator-blink {
+    animation: blink 1s step-end infinite;
+  }
+}
