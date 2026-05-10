@@ -218,7 +218,8 @@ const Hero = () => {
 
       {/* Kinetic Image */}
 
-      <div className="absolute right-0 bottom-0 md:bottom-20 w-full md:w-1/2 h-[400px] md:h-[600px] opacity-20 md:opacity-100 -z-20 md:z-0 grayscale hover:grayscale-0 transition-all duration-700 overflow-hidden">
+      <div className="absolute right-0 top-1/2 -translate-y-1/2 w-full md:w-1/2 h-[400px] md:h-[600px] opacity-20 md:opacity-100 -z-20 md:z-0 grayscale hover:grayscale-0 transition-all duration-700 overflow-hidden">
+
         <img
           alt="Performance Engineering"
           className="w-full h-full object-cover"

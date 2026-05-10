@@ -40,7 +40,8 @@ const ScrollProgress = () => {
   const currentSector = progress < 33 ? 0 : progress < 66 ? 1 : 2;
 
   return (
-    <div className="fixed right-12 top-1/2 -translate-y-1/2 z-[100] hidden md:flex flex-col items-center gap-3">
+    <div className="fixed right-12 top-[60%] -translate-y-1/2 z-[100] hidden md:flex flex-col items-center gap-3">
+
 
 
       {/* Speedometer readout */}
