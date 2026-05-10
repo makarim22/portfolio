@@ -40,7 +40,9 @@ const ScrollProgress = () => {
   const currentSector = progress < 33 ? 0 : progress < 66 ? 1 : 2;
 
   return (
-    <div className="fixed right-4 top-1/2 -translate-y-1/2 z-[100] hidden md:flex flex-col items-center gap-3">
+    <div className="fixed right-12 top-1/2 -translate-y-1/2 z-[100] hidden md:flex flex-col items-center gap-3">
+
+
       {/* Speedometer readout */}
       <div className="text-center mb-2">
         <span
@@ -59,7 +61,8 @@ const ScrollProgress = () => {
       </div>
 
       {/* Vertical track */}
-      <div className="relative w-[3px] h-48 bg-outline-variant overflow-visible">
+      <div className="relative w-[3px] h-80 bg-outline-variant overflow-visible">
+
         {/* Sector markers */}
         <div className="absolute left-1/2 -translate-x-1/2 top-[33%] w-3 h-[1px] bg-on-surface-variant" />
         <div className="absolute left-1/2 -translate-x-1/2 top-[66%] w-3 h-[1px] bg-on-surface-variant" />
@@ -77,12 +80,33 @@ const ScrollProgress = () => {
         {/* Car indicator */}
         <div
           className="absolute left-1/2 -translate-x-1/2 transition-all duration-150"
-          style={{ bottom: `${progress}%` }}
+          style={{ 
+            bottom: `${progress}%`,
+            perspective: '500px' 
+          }}
         >
-          <div className="relative -left-[9px] w-5 h-3 bg-primary-fixed"
-            style={{ clipPath: 'polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%)', boxShadow: '0 0 10px #c8f300' }}
-          />
+          <div className="relative transform transition-transform duration-300" 
+               style={{ 
+                 transform: `rotateX(15deg) rotateY(-20deg) skewX(-10deg)` 
+               }}>
+            {/* 3D Depth Shadow */}
+            <img 
+              src="./racing-car.svg" 
+              alt=""
+              className="w-[300px] h-auto -rotate-90 -translate-x-[152px] opacity-30 blur-[4px] absolute brightness-0"
+            />
+            {/* Main Car */}
+            <img 
+              src="./racing-car.svg" 
+              alt="Car"
+              className="w-[300px] h-auto -rotate-90 -translate-x-[150px] relative"
+              style={{ filter: 'drop-shadow(0 0 15px rgba(200,243,0,0.6)) brightness(1.1)' }}
+            />
+
+          </div>
         </div>
+
+
       </div>
 
       {/* Sector labels */}

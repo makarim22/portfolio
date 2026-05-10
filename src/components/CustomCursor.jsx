@@ -5,7 +5,8 @@ const CustomCursor = () => {
   const ringRef = useRef(null);
   const trailRefs = useRef([]);
   const coords = useRef({ x: -100, y: -100 });
-  const trailCoords = useRef(Array.from({ length: 6 }, () => ({ x: -100, y: -100 })));
+  const trailCoords = useRef(Array.from({ length: 12 }, () => ({ x: -100, y: -100 })));
+
 
   useEffect(() => {
     const onMove = (e) => {
@@ -57,20 +58,22 @@ const CustomCursor = () => {
   return (
     <div className="hidden md:block pointer-events-none fixed inset-0 z-[9998]">
       {/* Trail particles */}
-      {Array.from({ length: 6 }).map((_, i) => (
+      {Array.from({ length: 12 }).map((_, i) => (
         <div
           key={i}
           ref={el => trailRefs.current[i] = el}
           className="fixed top-0 left-0 rounded-full"
           style={{
-            width: `${4 - i * 0.5}px`,
-            height: `${4 - i * 0.5}px`,
+            width: `${6 - i * 0.4}px`,
+            height: `${6 - i * 0.4}px`,
             background: '#c8f300',
-            opacity: 0.4 - i * 0.06,
-            boxShadow: `0 0 ${6 - i}px #c8f300`,
+            opacity: 0.6 - i * 0.05,
+            boxShadow: `0 0 ${12 - i}px #c8f300, 0 0 ${20 - i}px rgba(200,243,0,0.2)`,
+            filter: 'blur(0.5px)',
           }}
         />
       ))}
+
 
       {/* Outer ring */}
       <div

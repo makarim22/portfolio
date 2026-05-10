@@ -74,6 +74,8 @@ const Footer = () => {
         </a>
       </div>
 
+
+
       {/* Bottom racing stripe */}
       <div className="absolute bottom-0 left-0 w-full h-[2px] bg-outline-variant">
         <div

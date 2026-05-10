@@ -72,6 +72,8 @@ export default {
       fontFamily: {
         "body-md": ["hankenGrotesk", "sans-serif"],
         "label-caps": ["hankenGrotesk", "sans-serif"],
+        "headline-sm": ["anton", "sans-serif"],
+        "headline-md": ["anton", "sans-serif"],
         "headline-lg": ["anton", "sans-serif"],
         "display-lg-mobile": ["anton", "sans-serif"],
         "headline-xl": ["anton", "sans-serif"],
@@ -81,12 +83,15 @@ export default {
       fontSize: {
         "body-md": ["16px", { "lineHeight": "150%", "fontWeight": "400" }],
         "label-caps": ["12px", { "lineHeight": "100%", "letterSpacing": "0.1em", "fontWeight": "700" }],
+        "headline-sm": ["20px", { "lineHeight": "110%", "fontWeight": "400" }],
+        "headline-md": ["24px", { "lineHeight": "110%", "fontWeight": "400" }],
         "headline-lg": ["32px", { "lineHeight": "110%", "fontWeight": "400" }],
         "display-lg-mobile": ["56px", { "lineHeight": "95%", "letterSpacing": "-0.02em", "fontWeight": "400" }],
         "headline-xl": ["48px", { "lineHeight": "100%", "letterSpacing": "-0.01em", "fontWeight": "400" }],
         "display-lg": ["96px", { "lineHeight": "90%", "letterSpacing": "-0.04em", "fontWeight": "400" }],
         "body-lg": ["18px", { "lineHeight": "160%", "fontWeight": "400" }]
       }
+
     },
   },
   plugins: [],
